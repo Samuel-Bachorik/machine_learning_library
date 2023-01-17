@@ -7,5 +7,4 @@ Backpropagation alorithm implemented in this library will give you answer to thi
 Build your model, put your data inside, run backward, save model weights, load model weights and test trained model in real life<br/>
 
 
-#Theory
-
+# Theory
