@@ -1,1 +1,3 @@
-# BACKPROPAGATION FROM THE BOTTOM! 
+# Backpropagation coded from the bottom!!! 
+
+Backpropagation trough various linear layers, activation functions and loss functions... 
