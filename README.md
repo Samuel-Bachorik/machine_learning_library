@@ -4,4 +4,8 @@ How to change weights of the model to get better results? The right question is 
 
 Backpropagation alorithm implemented in this library will give you answer to this question. <br/>
 
-Build your model, put your data inside, run backward, save model weights, load model weights and test it
+Build your model, put your data inside, run backward, save model weights, load model weights and test trained model in real life<br/>
+
+
+###Theory
+
