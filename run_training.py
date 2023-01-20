@@ -3,7 +3,7 @@ from backward_linear_layer import *
 from dataset_loader import ImagesLoader
 from loss_functions import *
 from save_load_model import *
-
+from graphing_class import CreateGraph
 training_paths = []
 
 #Append all training folders
@@ -13,18 +13,22 @@ for z in range(10):
 
 if __name__ == '__main__':
 
-    batch_size = 256
+    batch_size = 512
     loader = ImagesLoader(batch_size)
     dataset = loader.get_dataset(training_paths, training=False)
 
-    lr = 0.01
+    lr = 0.001
 
     model = Model()
     backward = backward_linear("sgd",model)
 
-    lossum, num_epoch = 0, 5
+    lossum, num_epoch = 0, 50
 
+    #Define loss function
     criterion = CrossEntropyLoss()
+
+    batch_count_train = (60000 + batch_size) // batch_size
+    loss_chart = CreateGraph(batch_count_train, "MNIST Crossentropy loss")
 
     print("Training started...")
     count = 0
@@ -39,8 +43,11 @@ if __name__ == '__main__':
 
             lossum += loss
 
+            loss_chart.num_for_avg += loss
+
             model = backward.run_backward(model, y_pred, labels, lr, images, epoch, criterion)
 
+        loss_chart.count(epoch)
 
         print(numpy.argmax(y_pred[epoch]))
         print(labels[epoch])
@@ -49,10 +56,6 @@ if __name__ == '__main__':
         print("Average loss for epoch ", epoch + 1, " - ", lossum / len(dataset[0]))
         lossum = 0
 
+    # Save model weights after training
     save = save_load()
-    save.save_weights(model,"WEIGHTS")
-
-    save.load_weights(model, "WEIGHTS.npz")
-
-
-
+    save.save_weights(model,"WEIGHTS_BIG_SGD")
