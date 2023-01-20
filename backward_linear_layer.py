@@ -22,6 +22,7 @@ class backward_linear:
                     self.adam_optimizers.append(None)
 
         if self.optimizer == "sgd":
+            print("You are using SGD optimizer \n")
             self.sgd = SGD()
 
 
