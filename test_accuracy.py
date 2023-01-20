@@ -20,11 +20,9 @@ if __name__ == '__main__':
 
 
     def test_model():
-
-
             good_predictions = 0
+            
             for images, labels in (zip(*dataset)):
-
                 images = images.reshape(512, 784)
 
                 y = model.forward(images)
