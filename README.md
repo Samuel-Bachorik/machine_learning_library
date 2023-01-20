@@ -1,8 +1,8 @@
 # Fully automatic backpropagation algorithm trough various linear layers, activation functions and loss function
 
-   - How to change weights of the model to get better results? The right question is - what are derivatives of weights with respect to loss function?<br/>
+   - What are derivatives of weights with respect to loss function? How to update model's weights to get better predictions?<br/>
 
-   - Backpropagation alorithm implemented in this library will give you answer to this question. <br/>
+   - Backpropagation alorithm implemented in this library will give you answer to this questions. <br/>
 
    - Build your model, put your data inside, run backward, save model weights, load model weights and test trained model in real life<br/>
 # Tests on hand written digits - MNIST
@@ -27,18 +27,19 @@ After sucessfull training, the accuracy of the model was tested on 10,000 test i
 
 # Theory
 ...
-## Linear layer
-...
-## Model
-...
-## Stochastic gradient descent
-...
-## Adam optimizer
-...
-## Loss functions
-...
-## Activation functions
-...
-## Training loop
-...
+## Training process
 
+![training loop](https://user-images.githubusercontent.com/61843287/213724773-14531b68-46d0-4d46-b841-e0c352e3ce50.JPG)
+I created this diagram with Lucidchart
+
+
+## Linear layer
+   - Linear layer applies a linear transformation to the incoming data x
+   - x, W and B are tensors 
+   - T = transposed matrix
+
+
+![image](https://user-images.githubusercontent.com/61843287/213730494-7d6dbb1b-74d9-49b6-91e6-47cd0d224de0.png)
+
+## Stochastic gradient descent
+Intiution behind optimizer Adam- https://www.geeksforgeeks.org/intuition-of-adam-optimizer/
