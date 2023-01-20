@@ -1,54 +1,7 @@
 import numpy
 import numpy as np
 from loss_functions import *
-
-
-class SGD:
-    def forward_SGD(self, model, index, dw, db, lr, bias = True):
-        #Weights
-        w_new = model.layers[index].weight - lr * dw
-        model.layers[index].weight = w_new
-
-        #Bias
-        if bias:
-            b_new = model.layers[index].bias - lr * db
-            model.layers[index].bias = b_new
-
-        return model
-
-
-
-class Adam:
-    def __init__(self):
-
-        self.m_dw, self.v_dw = 0, 0
-        self.m_db, self.v_db = 0, 0
-
-    def Adam_foward(self, model ,index, dw, db, epoch, lr, bias = True, betas=(0.9, 0.999), eps=1e-08):
-
-        #Weight
-
-        self.m_dw   = betas[0] * self.m_dw + (1 - betas[0]) * dw
-        self.v_dw   = betas[1] * self.v_dw + (1 - betas[1]) * (dw ** 2)
-
-        mdw_corr    = self.m_dw / (1 - np.power(betas[0], epoch + 1))
-        vdw_corr    = self.v_dw / (1 - np.power(betas[1], epoch + 1))
-
-        model.layers[index].weight -= (lr / (np.sqrt(vdw_corr + eps))) * mdw_corr
-
-        #Bias
-
-        if bias:
-            self.m_db   = betas[0] * self.m_db + (1 - betas[0]) * db
-            self.v_db   = betas[1] * self.v_db + (1 - betas[1]) * (db ** 2)
-
-            mdb_corr    = self.m_db / (1 - np.power(betas[0], epoch + 1))
-            vdb_corr    = self.v_db / (1 - np.power(betas[1], epoch + 1))
-
-            model.layers[index].bias -= (lr / (np.sqrt(vdb_corr + eps))) * mdb_corr
-
-
-        return model
+from optimizers import *
 
 class backward_linear:
     def __init__(self, optimizer, model):
@@ -69,7 +22,6 @@ class backward_linear:
                     self.adam_optimizers.append(None)
 
         if self.optimizer == "sgd":
-            print("You are using SGD optimizer \n")
             self.sgd = SGD()
 
 
@@ -93,11 +45,10 @@ class backward_linear:
 
 
                 if self.optimizer == "adam":
-                    model = self.adam_optimizers[i].Adam_foward(model,i, w_grad, b_grad, epoch, lr, bias=False)
+                    model = self.adam_optimizers[i].Adam_foward(model,i, w_grad, b_grad, epoch, lr, bias=model.layers[i].b)
 
                 if self.optimizer == "sgd":
-                    model = self.sgd.forward_SGD(model, i, w_grad, b_grad, lr, bias = True)
-
+                    model = self.sgd.forward_SGD(model, i, w_grad, b_grad, lr, bias = model.layers[i].b)
 
                 first_grad = x_grad
 
