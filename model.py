@@ -10,13 +10,14 @@ class Model:
                     Relu(),
                     Linearlayer(784, 1024, bias=True),
                     Relu(),
+                    Linearlayer(1024, 2048, bias=True),
+                    Relu(),
+                    Linearlayer(2048, 1024, bias=True),
+                    Relu(),
                     Linearlayer(1024, 784, bias=True),
                     Relu(),
-                    Linearlayer(784, 10, bias=True),
-                    Sigmoid()
+                    Linearlayer(784, 10, bias=True)
         ]
-
-
 
     def forward(self,x):
         x = self.layers[0].forward(x)
@@ -27,6 +28,9 @@ class Model:
         x = self.layers[5].forward(x)
         x = self.layers[6].forward(x)
         x = self.layers[7].forward(x)
+        x = self.layers[8].forward(x)
+        x = self.layers[9].forward(x)
+        x = self.layers[10].forward(x)
 
 
         return x
