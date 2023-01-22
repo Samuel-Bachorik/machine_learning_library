@@ -1,4 +1,4 @@
-# Fully automatic backpropagation algorithm trough various linear layers, activation functions and loss function
+# Fully automatic backpropagation algorithm implemeted in numpy trough various linear layers, activation functions and loss function
 
    - What are derivatives of weights with respect to loss function? How to update model's weights to get better predictions?<br/>
 
