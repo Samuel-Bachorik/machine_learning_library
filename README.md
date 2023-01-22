@@ -26,7 +26,22 @@ After sucessfull training, the accuracy of the model was tested on 10,000 test i
 
 
 # Theory
-...
+   - Example of forward and backward on three layer computational graph "model"
+   - MSE loss at the end of model
+   - Chart made with lucidchart
+
+   
+   
+
+
+![image](https://user-images.githubusercontent.com/61843287/213939301-6e8e1942-fe19-489d-95a7-d1c792ad7061.png)
+
+- Forward and backward computation corresponding to previous computational graph
+- SGD optimalization of two weights
+
+![image](https://user-images.githubusercontent.com/61843287/213939105-c7d26771-70ae-4d2d-b14a-24674178f68a.png)
+
+
 ## Training process
 
 ![training loop](https://user-images.githubusercontent.com/61843287/213724773-14531b68-46d0-4d46-b841-e0c352e3ce50.JPG)
