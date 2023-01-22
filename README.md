@@ -42,10 +42,10 @@ After sucessfull training, the accuracy of the model was tested on 10,000 test i
 ![image](https://user-images.githubusercontent.com/61843287/213939105-c7d26771-70ae-4d2d-b14a-24674178f68a.png)
 
 
-## Training process
+## Training process explained
 
 ![training loop](https://user-images.githubusercontent.com/61843287/213724773-14531b68-46d0-4d46-b841-e0c352e3ce50.JPG)
-I created this diagram with Lucidchart
+Chart made with lucidchart
 
 
 ## Linear layer
