@@ -1,12 +1,12 @@
 import numpy as np
 
 class save_load:
-
     def load_weights(self,model,filename):
         data = np.load(str(filename))
         lst = data.files
 
         counter = 0
+        # Loop trough model layers
         for i in range(len(model.layers)):
             if model.layers[i].__class__.__name__ == "Linearlayer":
                 model.layers[i].weight = data[lst[counter]]
@@ -18,9 +18,9 @@ class save_load:
 
 
     def save_weights(self,model,filename):
-
         model_weights = {}
         counter = 0
+        # Loop trough model layers
         for i in range(len(model.layers)):
             if model.layers[i].__class__.__name__ == "Linearlayer":
                 model_weights[str(counter)] = model.layers[i].weight
@@ -30,5 +30,5 @@ class save_load:
                     model_weights[str(counter)] = model.layers[i].bias
                     counter+=1
 
-
+        # Create file with weights
         np.savez_compressed(str(filename), **model_weights)
