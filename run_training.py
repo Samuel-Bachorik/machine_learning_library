@@ -19,10 +19,10 @@ if __name__ == '__main__':
 
     lr = 0.001
 
-    model = Model()
+    model    = Model()
     backward = backward_linear("sgd",model)
 
-    lossum, num_epoch = 0, 50
+   num_epoch = 50
 
     #Define loss function
     criterion = CrossEntropyLoss()
@@ -41,20 +41,11 @@ if __name__ == '__main__':
 
             loss = criterion.forward(labels, y_pred)
 
-            lossum += loss
-
             loss_chart.num_for_avg += loss
 
             model = backward.run_backward(model, y_pred, labels, lr, images, epoch, criterion)
 
         loss_chart.count(epoch)
-
-        print(numpy.argmax(y_pred[epoch]))
-        print(labels[epoch])
-
-
-        print("Average loss for epoch ", epoch + 1, " - ", lossum / len(dataset[0]))
-        lossum = 0
 
     # Save model weights after training
     save = save_load()
