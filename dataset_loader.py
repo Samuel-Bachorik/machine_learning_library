@@ -5,17 +5,23 @@ import random
 import torch
 import concurrent.futures
 import math
+
+"""
+This loader is made for MNIST dataset, it works concurent on all CPU cores.
+Loader can load training and also testing set. (training parameter in get_dataset())
+"""
+
 class ImagesLoader:
     def __init__(self, batch):
         self.batch = batch
 
-    def loop(self,paths):
+    def loop(self, paths):
 
         labels0 = numpy.zeros(self.batch, dtype=numpy.int64)
+        # Create empty tensor
         imgs = numpy.zeros((self.batch, 1, 28, 28), dtype=numpy.float32)
-
+        
         for i in range(self.batch):
-
             rand_path = random.randint(0, 9)
             path = paths[rand_path]
             labels0[i] = rand_path
@@ -34,7 +40,7 @@ class ImagesLoader:
 
         return labels0, imgs
 
-    def get_dataset(self,paths,training):
+    def get_dataset(self, paths, training):
         print("Loading dataset...")
         if training == True:
             epoch = 60000/self.batch
