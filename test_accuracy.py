@@ -5,7 +5,7 @@ from save_load_model import *
 
 
 testing_paths = []
-#Append all training folders
+#Append all testing folders
 for z in range(10):
     testing_paths.append("C:/Users/Samuel/PycharmProjects/Deep_learning_library/MNIST/MNIST - JPG - testing/{}/".format(z))
 
