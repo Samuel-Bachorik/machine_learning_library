@@ -39,7 +39,7 @@ After sucessfull training, the accuracy of the model was tested on 10,000 test i
 - Next image is forward and backward computation corresponding to previous computational graph
 - SGD optimalization of two weights
 
-![image](https://user-images.githubusercontent.com/61843287/214005665-1952d446-e1e6-42fe-857e-9a7985fbbc0d.png)
+![image](https://user-images.githubusercontent.com/61843287/214009611-91d0e47c-0b30-4989-be0a-a53deb223caa.png)
 
 
 ## Training process explained
