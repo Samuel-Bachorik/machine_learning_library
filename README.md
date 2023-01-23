@@ -12,7 +12,7 @@
 This graph represents model loss optimized with `Adam` optimizer, after 50 epochs with Adam we are getting average loss for epoch about 0.0003<br/>
 <br/>
 ![MNIST Crossentropy loss ADAM](https://user-images.githubusercontent.com/61843287/213419750-538c88e2-0ba9-4f74-9bbb-8b709b22a03a.jpg)<br/>
-This graph represents model loss optimized with basic `SGD` optimizer, with SGD we can not get less than 0.3859<br/>
+Next graph represents model loss optimized with basic `SGD` optimizer, with SGD we can not get less than 0.3859<br/>
 <br/>
 ![MNIST Crossentropy loss SGD](https://user-images.githubusercontent.com/61843287/213420893-b8baa676-530a-4411-b1fe-3b234f162585.jpg)<br/>
 
@@ -28,7 +28,7 @@ After sucessfull training, the accuracy of the model was tested on 10,000 test i
 # Theory
    - Example of forward and backward on three layer computational graph
    - MSE loss at the end of model
-   - Chart made with lucidchart
+   - Chart and equations are made with lucidchart
 
    
    
