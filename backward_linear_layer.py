@@ -12,7 +12,7 @@ class backward_linear:
         #Check if choosen optimizer is right
         if self.optimizer != "sgd" and self.optimizer != "adam":
             raise Exception("Wrong optimizer selected use 'adam' or 'sgd'")
-
+ 
         if optimizer == "adam":
             print("You are using Adam optimizer \n")
             self.adam_optimizers = []
