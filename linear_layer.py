@@ -1,5 +1,5 @@
 import numpy as np
-
+ 
 class Linearlayer:
     def __init__(self, in_features, out_feauters, bias= True):
 
