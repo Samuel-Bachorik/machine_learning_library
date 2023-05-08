@@ -11,7 +11,7 @@ class Model:
                     Linearlayer(784, 1024, bias=True),
                     Relu(),
                     Linearlayer(1024, 2048, bias=True),
-                    Relu(),
+                    Relu(), 
                     Linearlayer(2048, 1024, bias=True),
                     Relu(),
                     Linearlayer(1024, 784, bias=True),
