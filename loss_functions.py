@@ -1,5 +1,5 @@
 import numpy as np
-
+ 
 class MSE_loss:
     def forward(self, y, y_pred):
         loss = ((y - y_pred) ** 2).mean()
