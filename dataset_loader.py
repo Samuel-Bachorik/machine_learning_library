@@ -10,7 +10,7 @@ import math
 This loader is made for MNIST dataset, it works concurent on all CPU cores.
 Loader can load training and also testing set. (training parameter in get_dataset())
 """
-
+ 
 class ImagesLoader:
     def __init__(self, batch):
         self.batch = batch
