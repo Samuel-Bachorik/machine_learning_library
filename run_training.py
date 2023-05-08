@@ -48,7 +48,7 @@ if __name__ == '__main__':
             model = backward.run_backward(model, y_pred, labels, lr, images, epoch, criterion)
 
         loss_chart.count(epoch)
-
+ 
     # Save model weights after training
     save = save_load()
     save.save_weights(model,"WEIGHTS_BIG_SGD")
