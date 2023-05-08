@@ -17,7 +17,7 @@ Next graph represents model loss optimized with basic `SGD` optimizer, with SGD 
 ![MNIST Crossentropy loss SGD](https://user-images.githubusercontent.com/61843287/213420893-b8baa676-530a-4411-b1fe-3b234f162585.jpg)<br/>
 
 
-### Measuring accuracy of trained models
+### Measuring accuracy of trained models 
 
 After sucessfull training, the accuracy of the model was tested on 10,000 test images that the model had never seen before.
    - Model acuraccy optimized with `Adam`optimizer is 99.79 % and model missed only 21 of 10 000 images
