@@ -2,7 +2,7 @@ import numpy
 from model import Model
 from dataset_loader import ImagesLoader
 from save_load_model import *
-
+ 
 
 testing_paths = []
 #Append all testing folders
