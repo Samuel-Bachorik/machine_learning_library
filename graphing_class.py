@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-
+ 
 #Arithmetic mean
 class CreateGraph:
     def __init__(self, batch_count,name):
