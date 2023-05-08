@@ -14,7 +14,7 @@ class Sigmoid:
 
     def backward(self,x):
 
-        grad =  np.exp(-x)/((np.exp(-x)+1)**2)
+        grad =  np.exp(-x)/((np.exp(-x)+1)**2) 
 
         return grad
 
